@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Моя семья</title>
+  <link rel="stylesheet" type="text/css" href="foto.css">
+  <link rel="stylesheet" type="text/css" href="">
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+     <style>
+      /* Стили для текста по центру */
+      .centered-text {
+          position: absolute;
+          left: 100px; /* Расстояние от левого края страницы до текста */
+      }
+  
+      /* Стили для контейнера */
+      .container {
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+      }
+  
+      /* Стили для изображения */
+      .swing {
+          position: relative;
+          top: -1200px; /* Переместить изображение на 100 пикселей вниз */
+  
+      }
+  
+      img {
+       
+         
+          margin-left: auto;
+          margin-right: auto;
+          display: block;
+         
+      }
+  
+      /* Стили для заголовка */
+      h1 {
+          position: fixed;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          margin-top: 30px;
+          text-align: center;
+          width: 100%;
+      }
+      body {
+  overflow: hidden;
+}
+
+      /* Дополнительные стили для текста по центру */
+      .centered-text {
+          position: absolute;
+          left: 50%;
+          bottom: 800px; /* Расстояние от текста до изображения */
+          transform: translateX(-50%);
+          text-align: center;
+          top: 650px;
+      }
+  </style>
+</head>
+<body>
+  <canvas id="c"></canvas>
+  
+    <div id="content">
+      <div class="slide">
+        <div class="container">
+          <div class="swing">
+            <img src="father.jpg" alt="Swinging Image" width="350px">
+          </div>
+          <p class="centered-text">Работает в <a href = "https://www.rusprofile.ru/id/1419942"> -ООО НКЗ-</a><br>попросил добавить  <a href = "https://www.vodnik.info/gb.php">гостевая книга водник</a></br>болеет за  <a href = "http://www.vodnik.pro/">Водник Архангельск</a></p>
+          <h1>папа</h1>
+        </div>
+      </div>
+      <!-- Остальной код слайдов -->
+  
+    
+
+    <div class="slide hidden">
+      <!-- Код для второго слайда -->
+      <div class="slide">
+        <div class="container">
+          <div class="swing">
+            <img src="mother.jpg" alt="Swinging Image" width="300">
+          </div>
+          <p class="centered-text">работает в <a href = "https://sad6-pronsk.kinderedu.ru/">МДОУ-6</a></p>
+          <h1>мама</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide hidden">
+      <!-- Код для третьего слайда -->
+     
+      <div class="slide">
+        <div class="container">
+          <div class="swing">
+            <img src="tana.jpg" alt="Swinging Image" width="200">
+          </div>
+          <p class="centered-text">работает в <a href = "https://www.lamoda.ru/">lamoda</a></p>
+          <h1>таня</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide hidden">
+      <!-- Код для четвертого слайда -->
+      
+      <div id="content">
+        <div class="slide">
+          <div class="container">
+            <div class="swing">
+              <img src="tema.jpg" alt="Swinging Image" width="200">
+            </div>
+            <p class="centered-text">учится в <a href = "http://novomich-sk2.com.ru/">школе-2</a></p>
+            <h1>Артем</h1>
+          </div>
+        </div>
+        <!-- Остальной код слайдов -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var slides = document.querySelectorAll('.slide');
+    var currentSlideIndex = 0;
+
+    function showNextSlide() {
+      slides[currentSlideIndex].remove();
+
+      currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+      slides[currentSlideIndex].classList.remove('hidden');
+    }
+
+    document.addEventListener('keydown', function(event) {
+      if (event.code === 'Space') {
+        showNextSlide();
+      }
+    });
+
+    document.addEventListener('click', function() {
+      showNextSlide();
+    });
+  </script>
+  
+  <script src="fon.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/1.0.0/anime.min.js"></script>
+</body>
+</html>

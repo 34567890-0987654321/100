@@ -1,0 +1,77 @@
+/* Фон страницы */
+body {
+    background: #eee;
+}
+
+/* Контейнер для размещения изображения по центру экрана */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Стили для анимированного качания изображения */
+.swing {
+    animation: swing ease-in-out 1s infinite alternate;
+    transform-origin: center -20px;
+    float: left;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Стили для изображения */
+.swing img {
+    border: 5px solid #f8f8f8;
+    display: block;
+}
+
+/* Стили для "гвоздика" сверху изображения */
+.swing:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #999;
+    top: -10px;
+    left: 45%;
+    z-index: 0;
+    border-bottom: none;
+    border-right: none;
+    transform: rotate(45deg);
+}
+
+/* Стили для "гвоздика" над изображением */
+.swing:before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    border-radius: 50% 50%;
+    background: #000;
+}
+
+
+/* Анимация качания */
+@keyframes swing {
+    0% {
+        transform: rotate(3deg);
+    }
+    100% {
+        transform: rotate(-3deg);
+    }
+}
+
+/* Медиа-запрос для адаптации на мобильных устройствах */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .swing {
+        float: none;
+    }
+}
